@@ -1,19 +1,34 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import {
+  addImports,
+  addPlugin,
+  createResolver,
+  defineNuxtModule,
+} from '@nuxt/kit';
+import type { ModuleOptions } from './types';
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
+export type { ModuleOptions };
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nu-ma',
-    configKey: 'myModule'
+    configKey: 'umami',
   },
-  // Default configuration options of the Nuxt module
-  defaults: {},
-  setup (options, nuxt) {
-    const resolver = createResolver(import.meta.url)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
-  }
-})
+  setup(options, nuxt) {
+    const resolver = createResolver(import.meta.url);
+
+    // check if it is layer
+    // og-umami key, skip options
+    // const isLayer = nuxt.options.appConfig.umamiLayer as (boolean | undefined);
+    // if (!isLayer)
+
+    nuxt.options.appConfig.umami = options;
+
+    addPlugin(resolver.resolve('./runtime/plugin'));
+    const fns = ['umTrackEvent', 'umTrackView'];
+
+    fns.forEach(name =>
+      addImports({ name, as: name, from: resolver.resolve('runtime/tracker') }),
+    );
+  },
+});
