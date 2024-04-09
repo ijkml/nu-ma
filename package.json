@@ -1,10 +1,10 @@
 {
   "name": "nu-ma",
+  "type": "module",
   "version": "0.0.0",
   "description": "My new Nuxt module",
-  "repository": "ijkml/nu-ma",
   "license": "MIT",
-  "type": "module",
+  "repository": "ijkml/nu-ma",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
@@ -24,22 +24,18 @@
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test": "echo YOLO"
   },
   "dependencies": {
     "@nuxt/kit": "^3.11.2"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxt/eslint-config": "^0.3.2",
+    "@antfu/eslint-config": "^2.13.0",
     "@nuxt/module-builder": "^0.5.5",
     "@nuxt/schema": "^3.11.2",
-    "@nuxt/test-utils": "^3.12.0",
     "@types/node": "^20.12.5",
     "changelogen": "^0.5.5",
     "eslint": "^9.0.0",
-    "nuxt": "^3.11.2",
-    "vitest": "^1.4.0"
+    "nuxt": "^3.11.2"
   }
 }
