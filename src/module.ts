@@ -4,9 +4,8 @@ import {
   createResolver,
   defineNuxtModule,
 } from '@nuxt/kit';
+import { defu } from 'defu';
 import type { ModuleOptions } from './types';
-
-export type { ModuleOptions };
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -17,12 +16,8 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
-    // check if it is layer
-    // og-umami key, skip options
-    // const isLayer = nuxt.options.appConfig.umamiLayer as (boolean | undefined);
-    // if (!isLayer)
-
-    nuxt.options.appConfig.umami = options;
+    if (!nuxt.options.appConfig.umamiLayer)
+      nuxt.options.appConfig.umConfig = defu(options);
 
     addPlugin(resolver.resolve('./runtime/plugin'));
     const fns = ['umTrackEvent', 'umTrackView'];
@@ -32,3 +27,5 @@ export default defineNuxtModule<ModuleOptions>({
     );
   },
 });
+
+export type { ModuleOptions };

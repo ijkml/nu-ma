@@ -26,7 +26,7 @@ const umConfig = computed(() => {
   const { public: { umamiHost, umamiId } } = useRuntimeConfig();
 
   const {
-    umami: {
+    umConfig: {
       host: _host = '',
       id = '',
       domains = undefined,
@@ -36,7 +36,7 @@ const umConfig = computed(() => {
       version: _ver = 1,
       useDirective = false,
       debug = false,
-    },
+    } = {},
   } = useAppConfig();
 
   const customEP = isValidString(_customEP) ? _customEP.trim() : undefined;
@@ -165,4 +165,11 @@ async function collect(load: ServerPayload) {
     });
 }
 
-export { isValidString, preflight, getPayload, collect, umConfig, helloDebugger };
+export {
+  collect,
+  umConfig,
+  preflight,
+  getPayload,
+  helloDebugger,
+  isValidString,
+};
