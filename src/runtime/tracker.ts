@@ -5,8 +5,8 @@ import {
   isValidString,
   preflight,
   umConfig,
-} from '../internal/utils';
-import type { EventData, EventPayload, ViewPayload } from '../internal/types';
+} from './internal/utils';
+import type { EventData, EventPayload, ViewPayload } from './internal/types';
 
 /**
  * Track page views

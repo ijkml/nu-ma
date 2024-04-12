@@ -1,6 +1,6 @@
 import type { Directive } from 'vue';
-import { umTrackEvent } from '../runtime/tracker';
-import { helloDebugger } from './utils';
+import { umTrackEvent } from './tracker';
+import { helloDebugger } from './internal/utils';
 
 // "savory" is a fun synonym for umami, why?
 // 1. dodge script blockers
@@ -43,7 +43,7 @@ async function setAttributes(el: HTMLElement, value: BindingValue) {
 
 function getAttributes(el: HTMLElement) {
   const name = el.dataset[ATTR_NAME] || '';
-  let data = null;
+  let data = {};
 
   try {
     data = JSON.parse(el.dataset[ATTR_DATA] || '');

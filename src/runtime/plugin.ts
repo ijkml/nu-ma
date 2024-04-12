@@ -1,5 +1,5 @@
-import { directive } from '../internal/directive';
-import { umConfig } from '../internal/utils';
+import { umConfig } from './internal/utils';
+import { directive } from './directive';
 import { umTrackView } from './tracker';
 import { defineNuxtPlugin } from '#app';
 

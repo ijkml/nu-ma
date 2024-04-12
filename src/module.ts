@@ -22,7 +22,7 @@ export default defineNuxtModule<ModuleOptions>({
     const fns = ['umTrackEvent', 'umTrackView'];
 
     fns.forEach(name =>
-      addImports({ name, as: name, from: resolver.resolve('runtime/tracker') }),
+      addImports({ name, as: name, from: resolver.resolve('./runtime/tracker') }),
     );
   },
 });
