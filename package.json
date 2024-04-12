@@ -1,10 +1,10 @@
 {
-  "name": "nu-ma",
+  "name": "nuxima",
   "type": "module",
   "version": "0.0.0",
   "description": "Umami module for Nuxt",
   "license": "MIT",
-  "repository": "ijkml/nu-ma",
+  "repository": "ijkml/nuxima",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",

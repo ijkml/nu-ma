@@ -8,7 +8,7 @@ import type { ModuleOptions } from './types';
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nu-ma',
+    name: 'nuxima',
     configKey: 'umami',
   },
 
