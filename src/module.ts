@@ -4,7 +4,6 @@ import {
   createResolver,
   defineNuxtModule,
 } from '@nuxt/kit';
-import { defu } from 'defu';
 import type { ModuleOptions } from './types';
 
 export default defineNuxtModule<ModuleOptions>({
@@ -17,7 +16,7 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url);
 
     if (!nuxt.options.appConfig.umamiLayer)
-      nuxt.options.appConfig.umConfig = defu(options);
+      nuxt.options.appConfig.umConfig = options;
 
     addPlugin(resolver.resolve('./runtime/plugin'));
     const fns = ['umTrackEvent', 'umTrackView'];

@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "nu-ma-playground",
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
