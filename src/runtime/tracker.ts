@@ -75,14 +75,8 @@ function trackEvent(eventName: string, eventData?: EventData) {
     : undefined;
 
   const eventObj = version === 2
-    ? {
-        name,
-        data,
-      }
-    : {
-        event_name: name,
-        event_data: data,
-      };
+    ? { name, data }
+    : { event_name: name, event_data: data };
 
   void collect({
     type: 'event',

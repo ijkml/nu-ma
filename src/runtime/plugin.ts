@@ -1,7 +1,7 @@
 import { umConfig } from './internal/utils';
 import { directive } from './directive';
 import { umTrackView } from './tracker';
-import { defineNuxtPlugin } from '#app';
+import { defineNuxtPlugin } from '#imports';
 
 export default defineNuxtPlugin({
   name: 'umami-tracker',

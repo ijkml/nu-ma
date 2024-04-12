@@ -15,6 +15,9 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
+    nuxt.options.runtimeConfig.public.umamiHost ||= '';
+    nuxt.options.runtimeConfig.public.umamiId ||= '';
+
     if (!nuxt.options.appConfig.umamiLayer)
       nuxt.options.appConfig.umConfig = options;
 
