@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/ijkml/nuxima/compare/v0.0.2...v0.0.3)
+
+### 🩹 Fixes
+
+- Autoimports and runtimeConfig ([87a57a7](https://github.com/ijkml/nuxima/commit/87a57a7))
+
+### 🏡 Chore
+
+- **release:** V0.0.2 ([e838c58](https://github.com/ijkml/nuxima/commit/e838c58))
+
+### ❤️ Contributors
+
+- ML ([@ijkml](http://github.com/ijkml))
+
 ## v0.0.2
 
 
