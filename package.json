@@ -2,7 +2,7 @@
   "name": "nu-ma",
   "type": "module",
   "version": "0.0.0",
-  "description": "My new Nuxt module",
+  "description": "Umami module for Nuxt",
   "license": "MIT",
   "repository": "ijkml/nu-ma",
   "exports": {
