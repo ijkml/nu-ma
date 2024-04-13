@@ -64,10 +64,10 @@ interface ModuleOptions {
 }
 
 declare module '@nuxt/schema' {
-  interface PublicRuntimeConfig {
-    umamiHost?: string;
-    umamiId?: string;
-  }
+  // interface PublicRuntimeConfig {
+  //   umamiHost?: string;
+  //   umamiId?: string;
+  // }
 
   interface AppConfig {
     umConfig?: ModuleOptions;

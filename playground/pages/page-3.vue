@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed, useHead, useRoute } from '#imports';
+
 const route = useRoute();
 
 const title = computed(() => {

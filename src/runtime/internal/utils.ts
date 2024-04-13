@@ -8,6 +8,7 @@ import {
   computed,
   ref,
   useAppConfig,
+  useRoute,
   useRuntimeConfig,
 } from '#imports';
 

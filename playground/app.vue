@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed, ref, umTrackEvent, umTrackView } from '#imports';
+
 const shareUrl = 'https://savory.vercel.app/share/j2f1spIBFqHJKsXv/Nuxt%20Umami';
 
 function testView() {
